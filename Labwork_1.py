@@ -20,7 +20,7 @@ class StudentClass:
         self.id_student     = id_student
         self.name_student   = name_student
         self.dob_student    = dob_student
-        self.marks = {}
+        self.marks          = {}
 
     def add_mark(self, course, mark):
         self.marks[course.course_id] = mark
@@ -45,8 +45,6 @@ def student_display():
 
 
 
-
-
 class CourseClass:
     def __init__(self, course_id, course_name):
         self.course_id   = course_id
@@ -67,10 +65,9 @@ def course_display():
         print(f"Course ID: {course.course_id}, Course Name: {course.course_name}")
 
 
-
-
 def mark_input():
     course_id = input("Enter the Course ID for which you want to input marks: ")
+    
     for student in students_list:
         mark = input(f"Enter the mark for {student.name_student} in {course_id}: ")
         course = next((c for c in courses_list if c.course_id == course_id), None)
